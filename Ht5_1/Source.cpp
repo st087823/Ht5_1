@@ -68,36 +68,6 @@ void check(ArrayList& a, int x) {
 	}
 }
 
-int numLength(int number) {
-	int result = 1;
-	if (number < 0) 
-	{
-		number = (-1) * number;
-		result++; 
-	}
-	while (number > 9) 
-	{
-		number / 10;
-		result++;
-	}
-	return result;
-}
-
-void addSymbol(char* str, int& index, int symbol) {
-	str[index] = symbol;
-	index++;
-}
-
-void addNubber(char* str, int& index, int number) {
-	int length = numLength(number);
-	for (int i = 0; i < length; i++) 
-	{
-		int digit = number % 10;
-		str[index + length - 1 - i] = '0' + digit;
-		number /= 10;
-	}
-	index += length;
-}
 
 int main()
 {
