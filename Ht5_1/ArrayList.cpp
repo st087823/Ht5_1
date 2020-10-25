@@ -17,6 +17,10 @@ ArrayList::ArrayList(int capacity)
 ArrayList::~ArrayList()
 {
 	delete[] data;
+	if (str != nullptr)
+	{
+		delete[] str;
+	}
 }
 
 void ArrayList::expand()
