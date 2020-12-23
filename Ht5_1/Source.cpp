@@ -30,24 +30,20 @@ void check(ArrayList& a, int x) {
 		}
 	}
 	if (x == 3) {
-		int min = 1000;
-		int index_min = 0;
-		int max = -1000;
-		int index_max = 0;
-		for (int i = 0; i < a.length(); i++) 
+		int minindex = 0;
+		int maxindex = 0;
+		for (int i = 0; i < a.length(); ++i)
 		{
-			if (a.get(i) > max) 
+			if (a.get(i) < a.get(minindex))
 			{
-				max = a.get(i);
-				index_max = i;
+				minindex = i;
 			}
-			if (a.get(i) < min) 
+			if (a.get(i) >= a.get(maxindex))
 			{
-				min = a.get(i);
-				index_min = i;
+				maxindex = i;
 			}
 		}
-		a.swap(index_min, index_max);
+		a.swap(minindex, maxindex);
 		cout << a.toString() << endl;
 	}
 	if (x == 4) {
